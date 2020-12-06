@@ -1,0 +1,31 @@
+// Variables
+
+// Typography
+$default-font-family: Arial, Helvetica, sans-serif;
+
+// Colors
+$text-dark: #333;
+
+// Default Resets
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: $default-font-family;
+}
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}

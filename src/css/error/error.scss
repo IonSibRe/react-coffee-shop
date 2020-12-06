@@ -1,0 +1,36 @@
+@import "../global/config";
+
+.main-container {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.error-text-wrap {
+		text-align: center;
+
+		.error-title {
+			margin-bottom: 1rem;
+			font-size: 14rem;
+			color: $text-dark;
+		}
+
+		.error-subtitle {
+			margin-bottom: 4rem;
+			font-size: 3rem;
+			color: $text-dark;
+		}
+
+		.home-btn {
+			padding: 1rem 3rem;
+			font-size: 2.5rem;
+			color: #fff;
+			background-color: #c7a17a;
+		}
+
+		.home-btn:hover {
+			opacity: 0.9;
+		}
+	}
+}
