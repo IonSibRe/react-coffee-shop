@@ -1,0 +1,10 @@
+// ====================== Imports ======================
+@import "../error/error";
+@import "./navbar";
+
+.home-header {
+	height: 100vh;
+	width: 100vw;
+	background: url(../../assets/home-header-bg.jpg) no-repeat center
+		center/cover;
+}

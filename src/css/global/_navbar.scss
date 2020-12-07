@@ -1,0 +1,50 @@
+@import "./config";
+
+.nav {
+	width: 100vw;
+	position: fixed;
+	background-color: rgba($color: #000000, $alpha: 0.5);
+}
+
+.nav-inner-container {
+	width: 90%;
+	margin: 0 auto;
+	padding: 1.25rem 0;
+	display: flex;
+	justify-content: space-between;
+
+	// Hamburger Menu
+	.nav-hamburger-container {
+		display: none;
+	}
+
+	// Logo Container
+	.nav-logo-container {
+		display: flex;
+		align-items: center;
+
+		.nav-logo {
+			@include text-styling;
+			font-size: $h2-size;
+			color: $text-color;
+		}
+	}
+
+	// Links Container
+	.nav-links-container {
+		.nav-ul {
+			display: flex;
+		}
+
+		.nav-li {
+			margin: 0 2.5rem;
+		}
+
+		.nav-a {
+			font-size: $nav-link-size;
+			color: $text-color;
+			text-transform: capitalize;
+			letter-spacing: 0.25rem;
+		}
+	}
+}
