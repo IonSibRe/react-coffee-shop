@@ -1,57 +1,70 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { GiHamburgerMenu } from "react-icons/gi";
 import "../css/global/styles.scss";
 
 function Navbar() {
 	const pages = [
 		{
 			id: 1,
-			link: "/",
+			url: "/",
 			name: "home",
 		},
 		{
 			id: 2,
-			link: "/about",
+			url: "/about",
 			name: "about",
 		},
 		{
 			id: 3,
-			link: "/products",
+			url: "/products",
 			name: "products",
 		},
 		{
 			id: 4,
-			link: "/contact",
+			url: "/contact",
 			name: "contact",
 		},
 	];
 
-	const nav_ul = useRef(null);
+	const [showLinks, setShowLinks] = useState(false);
+	const linksContainerRef = useRef(null);
+	const linksRef = useRef(null);
 
-	const toggleClass = () => {
-		nav_ul.current.classList.toggle("open");
-	};
+	useEffect(() => {
+		const linksHeight = linksRef.current.getBoundingClientRect().height;
+		if (showLinks) {
+			linksContainerRef.current.style.height = `${linksHeight}px`;
+		} else {
+			linksContainerRef.current.style.height = "0px";
+		}
+	}, [showLinks]);
 
 	return (
 		<nav className="nav">
 			<div className="nav-inner">
-				<h2 className="nav-title">Coffee Shop</h2>
-				<button className="toggle-btn" onClick={toggleClass}>
-					<GiHamburgerMenu />
-				</button>
-				<ul className="nav-ul" ref={nav_ul}>
-					{pages.map((page) => {
-						const { id, link, name } = page;
-						return (
-							<li className="nav-li" key={id}>
-								<Link to={link} className="nav-a">
-									{name}
-								</Link>
-							</li>
-						);
-					})}
-				</ul>
+				<div className="nav-header">
+					<h3 className="nav-title">Coffee Shop</h3>
+					<button
+						className="nav-toggle"
+						onClick={() => setShowLinks(!showLinks)}
+					>
+						<i className="fas fa-bars toggle-icon"></i>
+					</button>
+				</div>
+				<div className="links-container" ref={linksContainerRef}>
+					<ul className="links" ref={linksRef}>
+						{pages.map((link) => {
+							const { id, url, name } = link;
+							return (
+								<li key={id} className="nav-li">
+									<Link className="nav-a" to={url}>
+										{name}
+									</Link>
+								</li>
+							);
+						})}
+					</ul>
+				</div>
 			</div>
 		</nav>
 	);
