@@ -5,23 +5,26 @@
 }
 
 .nav-inner {
-	max-width: 90%;
+	max-width: 100%;
 	margin: 0 auto;
 	padding: 1rem 0;
 }
 
 .nav-header {
+	padding: 0.5rem 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 
 	.nav-title {
+		margin-left: 1.5rem;
 		@include text-styling;
 		font-size: $h2-size;
 		color: $text-color;
 	}
 
 	.nav-toggle {
+		margin-right: 1.5rem;
 		font-size: 2.5rem;
 		border: none;
 		color: #fff;
@@ -37,7 +40,9 @@
 	transition: $default-transition;
 
 	.links {
+		margin-top: 0.5rem;
 		padding: 0.5rem 0;
+		border-top: 1px solid #16d6a6;
 	}
 
 	.nav-li {
@@ -47,7 +52,7 @@
 	.nav-a {
 		@include text-styling;
 		display: block;
-		padding: 1rem 0;
+		padding: 1.25rem 0;
 		font-size: $nav-link-size;
 		color: #fff;
 	}
@@ -55,18 +60,20 @@
 
 @media screen and (min-width: 824px) {
 	.nav-inner {
+		max-width: 90%;
 		margin: 0 auto;
+		padding: 0.5rem 0;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
 
-	.nav-header {
-		padding: 0;
-	}
-
 	.nav-toggle {
 		display: none;
+	}
+
+	.nav-header .nav-title {
+		margin: 0;
 	}
 
 	.links-container {
@@ -76,6 +83,7 @@
 	.links-container .links {
 		display: flex;
 		padding: 0;
+		border: none;
 	}
 
 	.links-container .nav-li {
