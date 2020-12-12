@@ -1,8 +1,13 @@
 import React, { useRef, useState } from "react";
 import "../css/home/home.scss";
-import slide1 from "../assets/home-imgs/slide1.jpg";
-import slide2 from "../assets/home-imgs/slide2.jpeg";
-import slide3 from "../assets/home-imgs/slide3.jpg";
+import {
+	slide1,
+	slide2,
+	slide3,
+	coffee_1,
+	coffee_2,
+	coffee_3,
+} from "./HomeImages";
 
 function Slider() {
 	const slidesList = [
@@ -12,6 +17,7 @@ function Slider() {
 			subTitle:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, magni.",
 			bg_img: slide1,
+			coffee_img: coffee_1,
 		},
 		{
 			id: 2,
@@ -19,6 +25,7 @@ function Slider() {
 			subTitle:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, magni.",
 			bg_img: slide2,
+			coffee_img: coffee_2,
 		},
 		{
 			id: 3,
@@ -26,6 +33,7 @@ function Slider() {
 			subTitle:
 				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, magni.",
 			bg_img: slide3,
+			coffee_img: coffee_3,
 		},
 	];
 
@@ -52,7 +60,7 @@ function Slider() {
 		<header className="header">
 			<div className="slider">
 				{slidesList.map((slide, index) => {
-					const { id, title, subTitle, bg_img } = slide;
+					const { id, title, subTitle, bg_img, coffee_img } = slide;
 					const background = {
 						background: `url(${bg_img}) no-repeat
 							center top/cover`,
@@ -67,6 +75,7 @@ function Slider() {
 							key={id}
 						>
 							<div className="content">
+								<img src={coffee_img} alt="coffee img" />
 								<h1 className="slide-title">{title}</h1>
 								<h3 className="slide-subtitle">{subTitle}</h3>
 							</div>
@@ -87,6 +96,7 @@ function Slider() {
 					const { id } = slide;
 					return (
 						<span
+							key={id}
 							className={`dot ${id === current ? "active" : ""}`}
 						></span>
 					);

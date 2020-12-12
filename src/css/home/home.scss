@@ -1,4 +1,6 @@
+// ====================== Imports ======================
 @import "../global/config";
+@import "_home_responsive";
 
 // ====================== Slideshow ======================
 .slider {
@@ -20,7 +22,7 @@
 
 	.content {
 		position: absolute;
-		top: 50%;
+		top: 40%;
 		left: 50%;
 		text-align: center;
 		transform: translate(-50%, -50%);
@@ -94,5 +96,43 @@
 
 	.active {
 		background-color: $text-color;
+	}
+}
+
+// ====================== Coffee Build ======================
+.coffee_build_section {
+	height: 100vh;
+	width: 100%;
+}
+
+.coffee_build_inner_container {
+	width: 1170px;
+	margin: 0 auto;
+
+	.coffee_build_heading_container {
+		margin: 10rem 0;
+		text-align: center;
+	}
+
+	.coffee_build_heading_container > * {
+		margin: 3rem 0;
+	}
+
+	.coffee_build_title {
+		font-size: $h2-size + 0.5rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $text-color-inverse;
+	}
+
+	.coffee_build_subtitle {
+		font-size: $h3-size;
+		color: $text-secondary-color;
+	}
+
+	.coffee_build_text_underline {
+		width: 150px;
+		margin: 0 auto;
+		border: 1px solid #c7a17a;
 	}
 }
