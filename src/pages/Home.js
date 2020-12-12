@@ -1,8 +1,8 @@
 import React from "react";
-import HomeHeader from "../components/HomeHeader";
+import Slider from "../components/Slider";
 
 function Home() {
-	return <HomeHeader />;
+	return <Slider />;
 }
 
 export default Home;
