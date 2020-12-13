@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import "../css/global/styles.scss";
+import "../css/global/_navbar.scss";
 
 function Navbar() {
 	const pages = [

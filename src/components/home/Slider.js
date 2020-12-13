@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import "../css/home/home.scss";
+import "../../css/home/home.scss";
 import {
 	slide1,
 	slide2,
@@ -7,7 +7,7 @@ import {
 	coffee_1,
 	coffee_2,
 	coffee_3,
-} from "./HomeImages";
+} from "../../sample_data/home_images";
 
 function Slider() {
 	const slidesList = [
@@ -75,7 +75,11 @@ function Slider() {
 							key={id}
 						>
 							<div className="content">
-								<img src={coffee_img} alt="coffee img" />
+								<img
+									src={coffee_img}
+									alt="coffee img"
+									className="slide-img"
+								/>
 								<h1 className="slide-title">{title}</h1>
 								<h3 className="slide-subtitle">{subTitle}</h3>
 							</div>

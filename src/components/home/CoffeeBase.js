@@ -4,7 +4,7 @@ import {
 	coffee_build_img_1,
 	coffee_build_img_2,
 	coffee_build_img_3,
-} from "./HomeImages";
+} from "../../sample_data/home_images";
 
 const items = [
 	{
@@ -41,12 +41,12 @@ function CoffeeBase() {
 					</h2>
 					<div className="coffee_build_text_underline"></div>
 				</div>
-				{/* <div className="coffee_build_grid_container">
+				<div className="coffee_build_grid_container">
 					{items.map((item) => {
 						const { id, title, desc, img } = item;
 						return (
 							<div className="coffee_build_grid_item" key={id}>
-								<div className="coffee_built_img_wrap">
+								<div className="coffee_build_img_wrap">
 									<img
 										src={img}
 										alt={title}
@@ -60,12 +60,18 @@ function CoffeeBase() {
 									<p className="coffee_build_item_desc">
 										{desc}
 									</p>
-									<Link to="/about">read more</Link>
+									<Link
+										to="/about"
+										className="coffee_build_item_link"
+									>
+										read more{" "}
+										<i className="fas fa-arrow-right link-icon"></i>
+									</Link>
 								</div>
 							</div>
 						);
 					})}
-				</div> */}
+				</div>
 			</div>
 		</section>
 	);

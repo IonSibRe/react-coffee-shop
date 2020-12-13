@@ -1,0 +1,69 @@
+@import "../global/config";
+
+// ====================== Header ======================
+.about-header {
+	@include flex-center;
+	height: 50vh;
+	width: 100vw;
+
+	.about-heading {
+		font-size: $h1-size;
+		color: $text-color;
+	}
+}
+
+.about-inner-container {
+	width: $default-width;
+	margin: 10rem auto 0 auto;
+	display: flex;
+
+	.about-img-container {
+		flex: 1;
+		margin-right: 3rem;
+	}
+
+	.about-text-container {
+		flex: 1;
+		margin-left: 3rem;
+	}
+
+	.about-text-container > * {
+		margin: 2rem 0;
+	}
+
+	.about-heading {
+		font-size: $h2-size + 1rem;
+		text-transform: uppercase;
+		color: $text-color-inverse;
+	}
+
+	.about-paragraph {
+		font-size: $paragraph-size + 0.5rem;
+		line-height: 1.25;
+		color: $text-secondary-color;
+	}
+
+	.quote-wrap {
+		border-left: 4px solid $text-primary-color;
+		padding: 2rem 0;
+	}
+
+	.quote-text {
+		margin-left: 2.5rem;
+		font-size: $h3-size - 0.25rem;
+		font-weight: 600;
+		font-style: italic;
+		color: $text-color-inverse;
+	}
+
+	.about-icons-wrap {
+		margin: 5rem 0;
+	}
+
+	.about-icon {
+		display: inline-block;
+		margin-right: 2rem;
+		font-size: 2rem;
+		color: $text-secondary-color;
+	}
+}

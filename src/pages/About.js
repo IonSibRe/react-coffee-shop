@@ -1,7 +1,14 @@
 import React from "react";
+import AboutSection from "../components/about/AboutSection";
+import Header from "../components/about/Header";
 
 function About() {
-	return <div>About</div>;
+	return (
+		<>
+			<Header />
+			<AboutSection />
+		</>
+	);
 }
 
 export default About;

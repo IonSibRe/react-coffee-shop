@@ -30,6 +30,10 @@
 		opacity: 0;
 	}
 
+	.slide-img {
+		width: 250px;
+	}
+
 	.slide-title {
 		@include text-styling;
 		font-weight: 700;
@@ -106,9 +110,10 @@
 }
 
 .coffee_build_inner_container {
-	width: 1170px;
+	width: 1300px;
 	margin: 0 auto;
 
+	// Heading
 	.coffee_build_heading_container {
 		margin: 10rem 0;
 		text-align: center;
@@ -127,12 +132,202 @@
 
 	.coffee_build_subtitle {
 		font-size: $h3-size;
-		color: $text-secondary-color;
+		color: $text-primary-color;
 	}
 
 	.coffee_build_text_underline {
 		width: 150px;
 		margin: 0 auto;
 		border: 1px solid #c7a17a;
+	}
+
+	// Grid Layout
+	.coffee_build_grid_container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+
+	.coffee_build_grid_item {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.coffee_build_text_wrap > * {
+		margin: 1rem 0;
+	}
+
+	.coffee_build_item_title {
+		font-size: $h2-size;
+		text-transform: capitalize;
+		color: $text-color-inverse;
+	}
+
+	.coffee_build_item_desc {
+		font-size: $paragraph-size;
+		color: $text-secondary-color;
+	}
+
+	.coffee_build_item_link {
+		@include link-styling;
+	}
+
+	.coffee_build_item_link:hover .link-icon {
+		transform: translateX(10px);
+	}
+}
+
+// ====================== Home Menu ======================
+.home-menu-section {
+	height: 115vh;
+	width: 100vw;
+}
+
+.home-menu-overlay {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background-color: rgba($color: #000000, $alpha: 0.75);
+	z-index: 999;
+
+	// Heading
+	.home-menu-text-wrap {
+		text-align: center;
+	}
+	.home-menu-title {
+		@include text-styling;
+		padding: 7.5rem 0;
+		font-size: $h2-size + 1rem;
+		color: $text-color;
+	}
+
+	// Buttons
+	.menu-buttons-wrap {
+		margin-bottom: 7.5rem;
+		text-align: center;
+	}
+
+	.menu-btn {
+		margin: 0 2rem;
+		padding: 1rem 3rem;
+		font-size: $default-link-size;
+		border: 2px solid $text-color;
+		border-radius: 20px;
+		text-transform: capitalize;
+		color: $text-color;
+		background-color: transparent;
+		outline: none;
+		cursor: pointer;
+	}
+
+	.menu-btn:hover {
+		color: $text-color-inverse;
+		background-color: $text-color;
+		transition: all 0.25s ease-in-out;
+	}
+
+	// Grid Section
+	.home-menu-grid-container {
+		width: $default-width;
+		margin: 0 auto;
+		padding-bottom: 7.5rem;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 4rem;
+		row-gap: 2rem;
+	}
+
+	.menu-item {
+		display: flex;
+	}
+
+	.menu-img-wrap {
+		flex: 2;
+	}
+
+	.menu-item-desc-wrap {
+		flex: 10;
+		margin: 0 1rem;
+	}
+
+	.menu-item-price-wrap {
+		flex: 1;
+	}
+
+	.menu-item-title {
+		font-size: $h3-size;
+		text-transform: uppercase;
+		color: $text-color;
+	}
+
+	.menu-item-desc {
+		font-size: $paragraph-size;
+		font-weight: 400;
+		color: $text-primary-color;
+	}
+
+	.menu-item-price {
+		font-size: $h4-size;
+		color: $text-color;
+	}
+}
+
+// ====================== Carousel ======================
+.carousel-section {
+	width: $default-width;
+	margin: 7.5rem auto;
+	display: flex;
+
+	.carousel-text-container {
+		flex: 1;
+		background-color: $text-primary-color;
+	}
+
+	.carousel-text-inner-container {
+		width: 70%;
+		margin-left: 4rem;
+	}
+
+	.carousel-title {
+		margin: 5rem 0;
+		font-size: $h2-size + 0.5rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: $text-color;
+	}
+
+	.carousel-paragraph {
+		font-size: $paragraph-size + 0.25rem;
+		line-height: 1.5;
+		color: $text-color;
+	}
+
+	.carousel-link {
+		@include link-styling;
+		margin: 7.5rem 0;
+		color: $text-color;
+	}
+
+	.carousel-link:hover .link-icon {
+		transform: translateX(10px);
+	}
+
+	.carousel-slider {
+		flex: 1;
+		position: relative;
+	}
+
+	.carousel-slide {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		transition: $default-transition;
+	}
+
+	.carousel-slide.current {
+		opacity: 1;
 	}
 }
