@@ -3,6 +3,7 @@ import CoffeeBase from "../components/home/CoffeeBase";
 import Slider from "../components/home/Slider";
 import HomeMenu from "../components/home/HomeMenu";
 import Carousel from "../components/home/Carousel";
+import Footer from "../components/Footer";
 
 function Home() {
 	return (
@@ -11,6 +12,7 @@ function Home() {
 			<CoffeeBase />
 			<HomeMenu />
 			<Carousel />
+			<Footer />
 		</>
 	);
 }

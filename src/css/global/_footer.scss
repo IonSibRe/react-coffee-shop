@@ -1,0 +1,160 @@
+@import "./config";
+
+.main-footer {
+	height: 50vh;
+	width: 100vw;
+}
+
+.footer-overlay {
+	@include flex-center;
+	height: 100%;
+	width: 100%;
+	background-color: rgba($color: #000000, $alpha: 0.75);
+	z-index: 99;
+}
+
+.footer-inner {
+	height: auto;
+	width: $default-width;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 5rem;
+}
+
+// All the Footer Headings
+.footer-inner > * > h3 {
+	margin-bottom: 4rem;
+	font-size: $h3-size;
+	text-transform: uppercase;
+	color: $text-color;
+}
+
+// Opening Hours
+
+.opening-hours-wrap {
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.opening-hours-day {
+		font-size: $h4-size - 0.25rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: $text-color;
+	}
+
+	.opening-hours-time {
+		font-size: $h4-size - 0.5rem;
+		text-transform: uppercase;
+		color: $text-secondary-color;
+	}
+}
+
+// Latest Posts
+.latest-posts-wrap {
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid rgba($color: $text-secondary-color, $alpha: 0.5);
+
+	.latest-posts-title {
+		margin-bottom: 0.5rem;
+		font-size: $h4-size - 0.25rem;
+		font-weight: 400;
+		text-transform: uppercase;
+		color: $text-color;
+	}
+
+	.latest-posts-time {
+		font-size: $h4-size - 0.5rem;
+		font-weight: 400;
+		font-style: italic;
+		color: $text-primary-color;
+	}
+}
+
+// Contact Us
+.contact-us-text {
+	margin-bottom: 1rem;
+	font-size: $h4-size - 0.5rem;
+	font-weight: 400;
+	color: $text-secondary-color;
+}
+
+.contact-us-email {
+	color: $text-primary-color;
+}
+
+.contact-us-text:last-child {
+	margin-bottom: 4rem;
+}
+
+.email-form {
+	display: flex;
+}
+
+.email-input {
+	display: block;
+	margin-right: 1.5rem;
+	padding: 1rem 0.5rem;
+	border: 2px solid $text-secondary-color;
+	font-size: 1.5rem;
+	background-color: transparent;
+	color: $text-color;
+	outline: none;
+}
+
+.email-btn {
+	display: block;
+	padding: 0 1.5rem;
+	border: none;
+	background-color: $text-primary-color;
+}
+
+// Other Locations
+.location-container {
+	margin-bottom: 2.5rem;
+
+	.location-title {
+		margin-bottom: 2rem;
+		font-size: $h4-size - 0.25rem;
+		text-transform: uppercase;
+		color: $text-color;
+	}
+
+	.location-address {
+		font-size: $h4-size - 0.5rem;
+		font-weight: 400;
+		color: $text-secondary-color;
+	}
+}
+
+// Final Footer
+
+.final-footer {
+	padding: 2rem 0;
+	background-color: #000;
+}
+
+.final-inner-footer {
+	width: $default-width;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.footer-icon-link {
+	margin: 0 2rem;
+	font-size: 2rem;
+	color: $text-color;
+}
+
+.footer-rights-wrap {
+	@include flex-center;
+	color: $text-secondary-color;
+}
+
+.footer-rights-text {
+	font-size: $h4-size - 0.25rem;
+}
