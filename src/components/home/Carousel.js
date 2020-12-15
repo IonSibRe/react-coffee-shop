@@ -63,9 +63,7 @@ function Carousel() {
 							} `}
 							key={id}
 							style={background}
-						>
-							1
-						</div>
+						></div>
 					);
 				})}
 			</div>

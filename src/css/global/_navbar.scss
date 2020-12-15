@@ -93,3 +93,9 @@
 		margin: 0 1.25rem;
 	}
 }
+
+@media screen and (max-width: 424px) {
+	.nav-header .nav-title {
+		font-size: $h2-size - 0.5rem;
+	}
+}

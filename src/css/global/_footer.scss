@@ -1,7 +1,7 @@
 @import "./config";
 
 .main-footer {
-	height: 50vh;
+	height: 100%;
 	width: 100vw;
 }
 
@@ -17,6 +17,7 @@
 	height: auto;
 	width: $default-width;
 	margin: 0 auto;
+	padding: 5rem 0;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	gap: 5rem;
@@ -91,13 +92,15 @@
 }
 
 .email-form {
+	width: 100%;
 	display: flex;
+	justify-content: space-between;
 }
 
 .email-input {
-	display: block;
-	margin-right: 1.5rem;
-	padding: 1rem 0.5rem;
+	width: 75%;
+	display: inline-block;
+	padding: 1rem 0;
 	border: 2px solid $text-secondary-color;
 	font-size: 1.5rem;
 	background-color: transparent;
@@ -106,7 +109,6 @@
 }
 
 .email-btn {
-	display: block;
 	padding: 0 1.5rem;
 	border: none;
 	background-color: $text-primary-color;
@@ -131,7 +133,6 @@
 }
 
 // Final Footer
-
 .final-footer {
 	padding: 2rem 0;
 	background-color: #000;
@@ -151,10 +152,39 @@
 }
 
 .footer-rights-wrap {
-	@include flex-center;
 	color: $text-secondary-color;
 }
 
 .footer-rights-text {
 	font-size: $h4-size - 0.25rem;
+}
+
+@media screen and (max-width: 1300px) {
+	.footer-inner {
+		width: 95%;
+	}
+
+	.final-inner-footer {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 424px) {
+	.final-inner-footer {
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.footer-icon-container {
+		margin-bottom: 1rem;
+	}
+
+	.footer-icon-link {
+		margin: 0 1rem;
+		font-size: 1.5rem;
+	}
+
+	.footer-rights-text {
+		font-size: $h4-size - 0.5rem;
+	}
 }

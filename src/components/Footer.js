@@ -29,13 +29,22 @@ function Footer() {
 			<div className="final-footer">
 				<div className="final-inner-footer">
 					<div className="footer-icon-container">
-						<Link className="footer-icon-link">
+						<Link
+							className="footer-icon-link"
+							to="https://facebook.com"
+						>
 							<i className="fab fa-facebook-f"></i>
 						</Link>
-						<Link className="footer-icon-link">
+						<Link
+							className="footer-icon-link"
+							to="https://twitter.com"
+						>
 							<i className="fab fa-twitter"></i>
 						</Link>
-						<Link className="footer-icon-link">
+						<Link
+							className="footer-icon-link"
+							to="https://instagram.com"
+						>
 							<i className="fab fa-instagram"></i>
 						</Link>
 					</div>

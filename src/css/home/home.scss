@@ -36,6 +36,7 @@
 
 	.slide-title {
 		@include text-styling;
+		margin-bottom: 1rem;
 		font-weight: 700;
 		font-size: $h1-size + 2rem;
 	}
@@ -62,7 +63,7 @@
 }
 
 .button {
-	padding: 1.25rem 1.5rem;
+	padding: 1.25rem 1.75rem;
 	border: 2px solid #fff;
 	border-radius: 50%;
 	color: #fff;
@@ -105,8 +106,9 @@
 
 // ====================== Coffee Build ======================
 .coffee_build_section {
-	height: 100vh;
-	width: 100%;
+	height: 100%;
+	width: 100vw;
+	margin-bottom: 5rem;
 }
 
 .coffee_build_inner_container {
@@ -179,7 +181,7 @@
 
 // ====================== Home Menu ======================
 .home-menu-section {
-	height: 115vh;
+	height: 100%;
 	width: 100vw;
 }
 
@@ -193,22 +195,28 @@
 	// Heading
 	.home-menu-text-wrap {
 		text-align: center;
+		padding: 7.5rem 0;
 	}
+
 	.home-menu-title {
 		@include text-styling;
-		padding: 7.5rem 0;
+		margin-top: 1rem;
 		font-size: $h2-size + 1rem;
 		color: $text-color;
 	}
 
 	// Buttons
 	.menu-buttons-wrap {
+		width: $default-width;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		margin-bottom: 7.5rem;
 		text-align: center;
 	}
 
 	.menu-btn {
-		margin: 0 2rem;
+		margin: 1rem 2rem;
 		padding: 1rem 3rem;
 		font-size: $default-link-size;
 		border: 2px solid $text-color;
@@ -331,3 +339,5 @@
 		opacity: 1;
 	}
 }
+
+@import "./home_responsive";

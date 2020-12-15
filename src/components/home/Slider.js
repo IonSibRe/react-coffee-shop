@@ -89,10 +89,10 @@ function Slider() {
 			</div>
 			<div className="buttons">
 				<button id="prev" className="button" onClick={prevSlide}>
-					<i className="fas fa-arrow-left"></i>
+					<i className="fas fa-chevron-left"></i>
 				</button>
 				<button id="next" className="button" onClick={nextSlide}>
-					<i className="fas fa-arrow-right"></i>
+					<i className="fas fa-chevron-right"></i>
 				</button>
 			</div>
 			<div className="dots">
