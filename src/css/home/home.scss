@@ -282,12 +282,21 @@
 
 // ====================== Carousel ======================
 .carousel-section {
+	width: 100vw;
+	margin: 5rem 0;
+}
+
+.carousel-inner {
 	width: $default-width;
-	margin: 7.5rem auto;
+	margin: 0 auto;
 	display: flex;
 
+	// Text section
 	.carousel-text-container {
 		flex: 1;
+		min-height: 450px;
+		display: flex;
+		align-items: center;
 		background-color: $text-primary-color;
 	}
 
@@ -297,7 +306,7 @@
 	}
 
 	.carousel-title {
-		margin: 5rem 0;
+		margin-bottom: 3rem;
 		font-size: $h2-size + 0.5rem;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -305,23 +314,28 @@
 	}
 
 	.carousel-paragraph {
+		margin-bottom: 7.5rem;
 		font-size: $paragraph-size + 0.25rem;
 		line-height: 1.5;
 		color: $text-color;
 	}
 
 	.carousel-link {
-		@include link-styling;
-		margin: 7.5rem 0;
+		font-size: $default-link-size;
+		font-weight: 700;
+		text-transform: uppercase;
 		color: $text-color;
+		transition: $default-transition;
 	}
 
-	.carousel-link:hover .link-icon {
+	.carousel-link:hover i {
 		transform: translateX(10px);
 	}
 
+	// Images section
 	.carousel-slider {
 		flex: 1;
+		min-height: 450px;
 		position: relative;
 	}
 
@@ -329,8 +343,8 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		height: 100%;
 		width: 100%;
+		height: 100%;
 		opacity: 0;
 		transition: $default-transition;
 	}

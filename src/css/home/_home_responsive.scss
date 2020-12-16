@@ -14,8 +14,13 @@
 	}
 
 	// Carousel
-	.carousel-section {
+	.carousel-inner {
 		width: 100%;
+	}
+
+	.carousel-inner .carousel-text-inner-container {
+		width: 90%;
+		margin: 7rem auto;
 	}
 }
 
@@ -58,8 +63,26 @@
 	}
 
 	// Carousel
-	.carousel-section {
-		grid-template-columns: 1fr;
+	.carousel-inner {
+		flex-direction: column;
+	}
+
+	.carousel-inner .carousel-text-inner-container {
+		text-align: center;
+	}
+
+	.carousel-inner .carousel-title {
+		margin-bottom: 5rem;
+		font-size: $h2-size + 1rem;
+	}
+
+	.carousel-inner .carousel-paragraph {
+		margin-bottom: 5rem;
+		font-size: $paragraph-size + 0.75rem;
+	}
+
+	.carousel-inner .carousel-link {
+		font-size: $default-link-size + 0.25rem;
 	}
 }
 
