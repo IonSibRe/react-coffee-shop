@@ -1,7 +1,11 @@
 import React from "react";
 
-function context() {
-	return <div></div>;
-}
+const GlobalContext = React.createContext();
 
-export default context;
+const GlobalProvider = ({ children }) => {
+	return (
+		<GlobalContext.Provider value={{}}>{children}</GlobalContext.Provider>
+	);
+};
+
+export { GlobalContext, GlobalProvider };

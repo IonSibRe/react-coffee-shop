@@ -1,7 +1,18 @@
 import React from "react";
+import ContactSection from "../components/contact/ContactSection";
+import ContactHeader from "../components/contact/ContactHeader";
+import Footer from "../components/Footer";
+import "../css/global/styles.scss";
+import "../css/contact/contact.scss";
 
 function Contact() {
-	return <div>Contact</div>;
+	return (
+		<>
+			<ContactHeader />
+			<ContactSection />
+			<Footer />
+		</>
+	);
 }
 
 export default Contact;

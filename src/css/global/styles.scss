@@ -1,0 +1,20 @@
+@import "./config";
+
+// ====================== Headers ======================
+.component-header {
+	@include flex-center;
+	height: 50vh;
+	width: 100vw;
+
+	.component-heading {
+		font-size: $h1-size;
+		text-align: center;
+		color: $text-color;
+	}
+}
+
+@media screen and (max-width: 824px) {
+	.component-header .component-heading {
+		font-size: $h1-size - 1.5rem;
+	}
+}

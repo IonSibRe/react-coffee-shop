@@ -1,0 +1,46 @@
+export const contact_us_data = [
+	{
+		id: 1,
+		type: "address",
+		title: "address",
+		street: "198 West 21th Street,",
+		city: "Suite 721 New York,",
+		postal_code: "NY 10010",
+	},
+	{
+		id: 2,
+		type: "address",
+		title: "address",
+		street: "198 West 21th Street,",
+		city: "Suite 721 New York,",
+		postal_code: "NY 10010",
+	},
+	{
+		id: 3,
+		type: "phone",
+		title: "phones",
+		phone: "+95 (0) 123 456 789",
+		cell_phone: "+95 (0) 123 456 789",
+	},
+	{
+		id: 4,
+		type: "phone",
+		title: "phones",
+		phone: "+95 (0) 123 456 789",
+		cell_phone: "+95 (0) 123 456 789",
+	},
+	{
+		id: 5,
+		type: "email",
+		title: "emails",
+		first_email: "johndoe@example.com",
+		second_email: "janedoe@example.com",
+	},
+	{
+		id: 6,
+		type: "email",
+		title: "emails",
+		first_email: "johndoe@example.com",
+		second_email: "janedoe@example.com",
+	},
+];

@@ -1,12 +1,16 @@
 import React from "react";
 import AboutSection from "../components/about/AboutSection";
-import Header from "../components/about/Header";
+import AboutHeader from "../components/about/AboutHeader";
+import Footer from "../components/Footer";
+import "../css/global/styles.scss";
+import "../css/about/about.scss";
 
 function About() {
 	return (
 		<>
-			<Header />
+			<AboutHeader />
 			<AboutSection />
+			<Footer />
 		</>
 	);
 }

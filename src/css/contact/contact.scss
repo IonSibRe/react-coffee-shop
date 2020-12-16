@@ -1,0 +1,187 @@
+@import "../global/config";
+
+// ====================== Header ======================
+.contact-us-section {
+	width: 100vw;
+	padding: 7.5rem 0;
+	background-color: #fff;
+}
+
+.contact-us-inner-container {
+	width: $default-width;
+	margin: 0 auto;
+	display: flex;
+
+	// Heading & Text
+	.write-us-container {
+		margin-right: 1.5rem;
+	}
+
+	.contact-us-text-wrap > * {
+		margin-bottom: 2rem;
+	}
+
+	.contact-us-text-wrap > *:last-child {
+		margin-bottom: 5rem;
+	}
+
+	.contact-us-title {
+		font-size: $h2-size + 0.75rem;
+		text-transform: uppercase;
+		color: $text-color-inverse;
+	}
+
+	.contact-us-underline {
+		padding: 0.25rem 0;
+		width: 150px;
+		background-color: $text-primary-color;
+	}
+
+	.contact-us-paragraph {
+		font-size: $paragraph-size;
+		line-height: 1.5;
+		color: $text-secondary-color;
+	}
+
+	// Form
+	.write-us-form-wrap {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.write-us-form-wrap > * {
+		margin-bottom: 2rem;
+	}
+
+	.write-us-form-wrap > *:last-child {
+		margin-bottom: 0;
+	}
+
+	.contact-us-input {
+		padding: 1.25rem;
+		font-size: 2rem;
+		color: $text-primary-color;
+		background-color: #f6f4ef;
+		border: none;
+		outline: none;
+	}
+
+	.contact-us-input::placeholder {
+		color: $text-primary-color;
+	}
+
+	.contact-us-textarea {
+		height: 200px;
+		padding: 2rem 1rem;
+		font-size: 2rem;
+		font-family: $default-font-family;
+		border: none;
+		color: $text-primary-color;
+		background-color: #f6f4ef;
+		resize: none;
+		outline: none;
+	}
+
+	.contact-us-textarea::placeholder {
+		color: $text-primary-color;
+	}
+
+	.contact-us-form-btn-wrap {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.contact-us-form-btn {
+		padding: 1.5rem 3.5rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		border: none;
+		color: $text-color;
+		background-color: $text-primary-color;
+		transition: all 0.25s ease-in-out;
+		outline: none;
+		cursor: pointer;
+	}
+
+	.contact-us-form-btn:hover {
+		background-color: $text-color-inverse;
+	}
+
+	// Locations
+	.locations-container {
+		margin-left: 1.5rem;
+	}
+
+	.locations-info-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.locations-info-item {
+		margin-bottom: 2.5rem;
+		display: flex;
+	}
+
+	.locations-icon-wrap {
+		margin-right: 2rem;
+	}
+
+	.locations-icon {
+		font-size: 2.5rem;
+		color: $text-primary-color;
+	}
+
+	.locations-item-title {
+		margin-bottom: 1.5rem;
+		font-size: $h3-size - 0.25rem;
+		text-transform: uppercase;
+		color: $text-color-inverse;
+	}
+
+	.locations-item-text {
+		margin-bottom: 0.75rem;
+		font-size: $paragraph-size;
+		color: $text-secondary-color;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	.contact-us-inner-container {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 924px) {
+	.contact-us-inner-container {
+		flex-direction: column;
+	}
+
+	.contact-us-inner-container .write-us-container {
+		margin-right: 0;
+	}
+
+	.contact-us-inner-container .locations-container {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 464px) {
+	.contact-us-inner-container .contact-us-text-wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.contact-us-inner-container .write-us-container {
+		margin-bottom: 2.5rem;
+	}
+
+	.contact-us-inner-container .locations-info-container {
+		grid-template-columns: 1fr;
+	}
+
+	.contact-us-inner-container .contact-us-form-btn-wrap {
+		justify-content: center;
+	}
+}

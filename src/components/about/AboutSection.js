@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import about_img from "../../assets/about-imgs/about-img.png";
+import about_img from "../../assets/about-img.png";
 
 const about_data = {
 	title: "John Doe",
@@ -21,28 +21,33 @@ function AboutSection() {
 					<img src={about_img} alt="" className="about-img" />
 				</div>
 				<div className="about-text-container">
-					<h2 className="about-heading">{title}</h2>
-					<p className="about-paragraph">{desc_1}</p>
-					<div className="quote-wrap">
-						<h3 className="quote-text">{quote}</h3>
-					</div>
-					<p className="about-paragraph">{desc_2}</p>
-					<div className="about-icons-wrap">
-						<Link
-							to="https://www.facebook.com/"
-							className="about-icon"
-						>
-							<i className="fab fa-facebook"></i>
-						</Link>
-						<Link to="https://twitter.com" className="about-icon">
-							<i className="fab fa-twitter"></i>
-						</Link>
-						<Link
-							to="https://www.instagram.com/"
-							className="about-icon"
-						>
-							<i className="fab fa-instagram"></i>
-						</Link>
+					<div className="about-text-inner-container">
+						<h2 className="about-heading">{title}</h2>
+						<p className="about-paragraph">{desc_1}</p>
+						<div className="quote-wrap">
+							<h3 className="quote-text">{quote}</h3>
+						</div>
+						<p className="about-paragraph">{desc_2}</p>
+						<div className="about-icons-wrap">
+							<Link
+								to="https://www.facebook.com/"
+								className="about-icon"
+							>
+								<i className="fab fa-facebook"></i>
+							</Link>
+							<Link
+								to="https://twitter.com"
+								className="about-icon"
+							>
+								<i className="fab fa-twitter"></i>
+							</Link>
+							<Link
+								to="https://www.instagram.com/"
+								className="about-icon"
+							>
+								<i className="fab fa-instagram"></i>
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>
