@@ -65,6 +65,13 @@ function Navbar() {
 						})}
 					</ul>
 				</div>
+				<div className="cart-icon-wrap">
+					<Link to="/cart" className="cart-icon-link">
+						<i className="fas fa-shopping-cart cart-icon">
+							<p className="cart-item-counter">0</p>
+						</i>
+					</Link>
+				</div>
 			</div>
 		</nav>
 	);

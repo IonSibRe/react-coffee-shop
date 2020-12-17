@@ -11,6 +11,7 @@
 	max-width: 100%;
 	margin: 0 auto;
 	padding: 1rem 0;
+	position: relative;
 }
 
 .nav-header {
@@ -22,7 +23,7 @@
 	.nav-title {
 		margin-left: 1.5rem;
 		@include text-styling;
-		font-size: $h2-size;
+		font-size: $h2-size - 0.5rem;
 		color: $text-color;
 	}
 
@@ -56,16 +57,37 @@
 		@include text-styling;
 		display: block;
 		padding: 1.25rem 0;
-		font-size: $nav-link-size;
+		font-size: $nav-link-size - 0.25rem;
 		color: #fff;
 	}
 }
 
+.cart-icon-wrap {
+	@include flex-center;
+	padding: 0 1.25rem;
+	position: absolute;
+	top: 1.7rem;
+	right: 4rem;
+}
+
+.cart-icon-wrap .cart-icon-link {
+	font-size: 2rem;
+	color: $text-color;
+}
+
+.cart-item-counter {
+	padding: 0.1rem 0.3rem;
+	position: absolute;
+	top: -1rem;
+	right: 0.5rem;
+	background-color: $text-primary-color;
+}
+
 @media screen and (min-width: 824px) {
 	.nav-inner {
-		max-width: 90%;
+		max-width: 95%;
 		margin: 0 auto;
-		padding: 0.5rem 0;
+		padding: 0.75rem 0;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -81,10 +103,12 @@
 
 	.links-container {
 		height: auto !important;
+		margin-left: auto;
 	}
 
 	.links-container .links {
 		display: flex;
+		margin: 0;
 		padding: 0;
 		border: none;
 	}
@@ -92,10 +116,29 @@
 	.links-container .nav-li {
 		margin: 0 1.25rem;
 	}
+
+	.links-container .nav-a:hover {
+		color: $text-primary-color;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.cart-icon-wrap {
+		position: static;
+		border-left: 1px solid $text-color;
+	}
+
+	.cart-item-counter {
+		top: 0.75rem;
+		right: 0.5rem;
+	}
 }
 
 @media screen and (max-width: 424px) {
 	.nav-header .nav-title {
-		font-size: $h2-size - 0.5rem;
+		font-size: $h2-size - 0.75rem;
+	}
+
+	.cart-icon-wrap {
+		right: 3.5rem;
 	}
 }
