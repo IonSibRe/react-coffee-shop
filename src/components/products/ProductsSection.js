@@ -5,8 +5,10 @@ import ProductsFilter from "./ProductsFilter";
 function ProductsSection() {
 	return (
 		<section className="products-section">
-			<ProductsContainer />
-			<ProductsFilter />
+			<div className="products-inner-container">
+				<ProductsContainer />
+				<ProductsFilter />
+			</div>
 		</section>
 	);
 }

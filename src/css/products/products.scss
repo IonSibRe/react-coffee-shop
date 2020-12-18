@@ -2,28 +2,156 @@
 
 // Products Section
 .products-section {
-	width: $default-width;
-	margin: 0 auto;
-	display: flex;
-}
-
-// Products Showcase
-.products-showcase {
-	flex: 3;
-}
-
-.products-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.products-item {
-	display: flex;
-	flex-direction: column;
+	padding: 7.5rem 0;
 	background-color: #fff;
 }
 
-// Filter Container
-.filter-container {
-	flex: 1;
+.products-inner-container {
+	width: $default-width;
+	margin: 0 auto;
+	display: flex;
+
+	// Products Showcase
+	.products-showcase {
+		margin-right: 1rem;
+		flex: 3;
+	}
+
+	.products-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+
+	// Showcase Items
+	.products-item {
+		display: flex;
+		flex-direction: column;
+
+		.products-img-wrap {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.products-img-wrap:hover .add-to-cart-wrap {
+			transform: translateY(0);
+		}
+
+		.add-to-cart-wrap {
+			width: 100%;
+			text-align: center;
+			position: absolute;
+			bottom: 0;
+			background-color: $text-primary-color;
+			transform: translateY(100px);
+			transition: $default-transition;
+		}
+
+		.add-to-cart-btn {
+			padding: 1.25rem 0;
+			font-size: $h3-size - 0.75rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			border: none;
+			color: $text-color;
+			background-color: transparent;
+			outline: none;
+			cursor: pointer;
+		}
+
+		.add-to-cart-icon {
+			margin-right: 1rem;
+		}
+
+		.products-text-wrap {
+			margin: 2rem 0;
+		}
+
+		.products-title {
+			margin-bottom: 0.5rem;
+			font-size: $h3-size;
+			text-transform: uppercase;
+			color: $text-color-inverse;
+		}
+
+		.products-rating-wrap {
+			margin-bottom: 0.75rem;
+		}
+
+		.products-rating-icon {
+			color: $text-primary-color;
+		}
+
+		.products-price {
+			font-size: $h4-size;
+			color: $text-primary-color;
+		}
+	}
+
+	// Filter Container
+	.filter-container {
+		margin-left: 1rem;
+		flex: 1;
+	}
+
+	.filter-inner-container {
+		width: 90%;
+		margin: 0 auto;
+
+		> * {
+			padding: 2rem 0;
+			border-bottom: 1px solid $text-primary-color;
+		}
+
+		> *:last-child {
+			border-bottom: none;
+		}
+
+		.filter-heading-wrap {
+			text-align: center;
+		}
+
+		.filter-heading {
+			font-size: $h2-size;
+			text-transform: uppercase;
+			color: $text-color-inverse;
+		}
+
+		.filter-title {
+			margin-bottom: 1rem;
+			font-size: $h3-size - 0.25rem;
+			text-transform: uppercase;
+			color: $text-color-inverse;
+		}
+
+		.filter-price-input {
+			width: 100%;
+			margin-bottom: 1rem;
+		}
+
+		.filter-price-text {
+			font-size: $paragraph-size;
+			text-align: right;
+		}
+
+		.filter-category-btn {
+			display: block;
+			margin: 1rem 0;
+			padding-bottom: 0.5rem;
+			font-size: $default-link-size;
+			border: none;
+			color: $text-color-inverse;
+			background-color: transparent;
+			outline: none;
+			cursor: pointer;
+		}
+
+		.filter-category-btn:last-child {
+			margin: 1rem 0 0 0;
+		}
+
+		.active-category {
+			border-bottom: 1px solid $text-color-inverse;
+		}
+	}
 }
