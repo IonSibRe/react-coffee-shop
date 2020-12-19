@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Home, About, Products, Contact, Error } from "./pages";
+import { Home, About, Products, Contact, Cart, Error } from "./pages";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -22,6 +22,10 @@ function App() {
 				<Route path="/contact">
 					<Navbar />
 					<Contact />
+				</Route>
+				<Route path="/cart">
+					<Navbar />
+					<Cart />
 				</Route>
 				<Route path="*">
 					<Error />

@@ -3,5 +3,6 @@ import About from "./About";
 import Products from "./Products";
 import Contact from "./Contact";
 import Error from "./Error";
+import Cart from "./Cart";
 
-export { Home, About, Products, Contact, Error };
+export { Home, About, Products, Contact, Cart, Error };

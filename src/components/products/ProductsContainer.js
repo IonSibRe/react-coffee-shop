@@ -1,15 +1,26 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductsContext } from "../../context/ProductsContext";
+import { CartContext } from "../../context/CartContext";
 
 function ProductsContainer() {
 	const { products } = useContext(ProductsContext);
+	const { addToCart, cart } = useContext(CartContext);
+
 	return (
 		<article className="products-showcase">
 			<div className="products-container">
 				{products.map((product) => {
 					const { id, title, rating, price, img } = product;
 					const icons = [];
+
+					let inCart;
+
+					cart.forEach((item) => {
+						if (item.id === id) {
+							inCart = true;
+						}
+					});
 
 					for (let i = 0; i < parseInt(rating); i++) {
 						icons.push({
@@ -29,9 +40,15 @@ function ProductsContainer() {
 									/>
 								</Link>
 								<div className="add-to-cart-wrap">
-									<button className="add-to-cart-btn">
+									<button
+										disabled={inCart ? true : false}
+										className="add-to-cart-btn"
+										onClick={() => {
+											addToCart(id, title, price, img);
+										}}
+									>
 										<i className="far fa-clipboard add-to-cart-icon"></i>{" "}
-										add to cart
+										{inCart ? "in cart" : "add to cart"}
 									</button>
 								</div>
 							</div>

@@ -76,7 +76,7 @@ function ContactSection() {
 											key={id}
 										>
 											<div className="locations-icon-wrap">
-												<i class="fas fa-map-marker-alt locations-icon"></i>
+												<i className="fas fa-map-marker-alt locations-icon"></i>
 											</div>
 											<div className="locations-text-wrap">
 												<h3 className="locations-item-title">
@@ -101,7 +101,7 @@ function ContactSection() {
 											key={id}
 										>
 											<div className="locations-icon-wrap">
-												<i class="fas fa-phone-alt locations-icon"></i>
+												<i className="fas fa-phone-alt locations-icon"></i>
 											</div>
 											<div className="locations-text-wrap">
 												<h3 className="locations-item-title">
@@ -123,7 +123,7 @@ function ContactSection() {
 											key={id}
 										>
 											<div className="locations-icon-wrap">
-												<i class="far fa-envelope locations-icon"></i>
+												<i className="far fa-envelope locations-icon"></i>
 											</div>
 											<div className="locations-text-wrap">
 												<h3 className="locations-item-title">

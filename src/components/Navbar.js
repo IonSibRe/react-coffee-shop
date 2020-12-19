@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/global/_navbar.scss";
+import { CartContext } from "../context/CartContext";
 
 function Navbar() {
 	const pages = [
@@ -29,6 +30,7 @@ function Navbar() {
 	const [showLinks, setShowLinks] = useState(false);
 	const linksContainerRef = useRef(null);
 	const linksRef = useRef(null);
+	const { amount } = useContext(CartContext);
 
 	useEffect(() => {
 		const linksHeight = linksRef.current.getBoundingClientRect().height;
@@ -68,7 +70,7 @@ function Navbar() {
 				<div className="cart-icon-wrap">
 					<Link to="/cart" className="cart-icon-link">
 						<i className="fas fa-shopping-cart cart-icon">
-							<p className="cart-item-counter">0</p>
+							<p className="cart-item-counter">{amount}</p>
 						</i>
 					</Link>
 				</div>

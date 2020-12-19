@@ -46,6 +46,13 @@ $default-transition: all 0.5s ease-in-out;
 	transition: $default-transition;
 }
 
+@mixin btn-default {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
 .link-icon {
 	transition: $default-transition;
 	margin-left: 1rem;
