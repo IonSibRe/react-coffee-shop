@@ -1,30 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { products_data } from "../sample_data/products_data";
 
 const ProductsContext = React.createContext();
 
+// Filter categories
+const categories = [
+	"all",
+	...new Set(products_data.map((product) => product.category)),
+];
+
+// Filter prices
+const prices = [
+	...new Set(products_data.map((product) => parseFloat(product.price))),
+];
+
 const ProductsProvider = ({ children }) => {
+	const minPrice = Math.min(...prices);
+	const maxPrice = Math.max(...prices);
+
 	const [products, setProducts] = useState(products_data);
 	const [currentProducts, setCurrentProducts] = useState(products_data);
-	const categories = [
-		"all",
-		...new Set(products_data.map((product) => product.category)),
-	];
+	const [currentMinPrice, setCurrentMinPrice] = useState(minPrice);
+	const [currentMaxPrice, setCurrentMaxPrice] = useState(maxPrice);
 
-	const prices = [
-		...new Set(products_data.map((product) => parseFloat(product.price))),
-	];
+	// Calculate min price of current products
+	const calculateNewPrices = useCallback(() => {
+		const newPrices = [
+			...new Set(currentProducts.map((product) => product.price)),
+		];
+
+		const newMinPrice = Math.min(...newPrices);
+		const newMaxPrice = Math.max(...newPrices);
+
+		setCurrentMinPrice(newMinPrice);
+		setCurrentMaxPrice(newMaxPrice);
+	}, [currentProducts]);
 
 	// Filter by category
 	const filterCategory = (category) => {
-		// All categories
 		if (category === "all") {
 			setProducts(products_data);
 			setCurrentProducts(products_data);
-		}
-		// Specific category
-		else {
-			// filter products
+		} else {
 			const newProducts = products_data.filter(
 				(product) => product.category === category
 			);
@@ -33,12 +50,18 @@ const ProductsProvider = ({ children }) => {
 		}
 	};
 
+	// Filter by price
 	const filterPrice = (price) => {
-		const filteredProducts = currentProducts.filter(
+		const newProducts = currentProducts.filter(
 			(product) => parseInt(product.price) <= price
 		);
-		setProducts(filteredProducts);
+		setProducts(newProducts);
 	};
+
+	// Calculate new min & max price when current products change
+	useEffect(() => {
+		calculateNewPrices();
+	}, [currentProducts, calculateNewPrices]);
 
 	return (
 		<ProductsContext.Provider
@@ -48,6 +71,9 @@ const ProductsProvider = ({ children }) => {
 				prices,
 				filterCategory,
 				filterPrice,
+				calculateNewPrices,
+				currentMinPrice,
+				currentMaxPrice,
 			}}
 		>
 			{children}

@@ -1,16 +1,24 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { ProductsContext } from "../../context/ProductsContext";
 
 function ProductsFilter() {
-	const { categories, prices, filterCategory, filterPrice } = useContext(
-		ProductsContext
-	);
-	const [currentCategory, setCurrentCategory] = useState("all");
-	const priceInput = useRef(null);
-	const minPrice = Math.min(...prices);
-	let maxPrice = Math.max(...prices);
+	const {
+		categories,
+		filterCategory,
+		filterPrice,
+		calculateNewPrices,
+		currentMinPrice,
+		currentMaxPrice,
+	} = useContext(ProductsContext);
 
-	let [currentMaxPrice, setCurrentMaxPrice] = useState(maxPrice);
+	const [currentCategory, setCurrentCategory] = useState("all");
+	const [currentMaxPriceUI, setCurrentMaxPriceUI] = useState(currentMaxPrice);
+
+	const priceInput = useRef(null);
+
+	useEffect(() => {
+		setCurrentMaxPriceUI(currentMaxPrice);
+	}, [currentMaxPrice]);
 
 	return (
 		<aside className="filter-container">
@@ -23,16 +31,16 @@ function ProductsFilter() {
 					<input
 						type="range"
 						className="filter-price-input"
-						min={minPrice}
-						max={maxPrice}
+						min={currentMinPrice}
+						max={currentMaxPrice}
 						ref={priceInput}
 						onChange={() => {
 							filterPrice(priceInput.current.value);
-							setCurrentMaxPrice(priceInput.current.value);
+							setCurrentMaxPriceUI(priceInput.current.value);
 						}}
 					/>
 					<p className="filter-price-text">
-						${minPrice} - ${currentMaxPrice}
+						${currentMinPrice} - ${currentMaxPriceUI}
 					</p>
 				</div>
 				<div className="filter-category-wrap">
@@ -49,6 +57,7 @@ function ProductsFilter() {
 								onClick={() => {
 									filterCategory(category);
 									setCurrentCategory(category);
+									calculateNewPrices();
 								}}
 							>
 								{category}
