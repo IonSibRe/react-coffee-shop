@@ -1,42 +1,7 @@
-import React, { useRef, useState } from "react";
-import "../../css/home/home.scss";
-import {
-	slide1,
-	slide2,
-	slide3,
-	coffee_1,
-	coffee_2,
-	coffee_3,
-} from "../../sample_data/home_images";
+import React, { useState, useEffect, useRef } from "react";
+import { slidesList } from "../../sample_data/home_data";
 
 function Slider() {
-	const slidesList = [
-		{
-			id: 1,
-			title: "importance of coffee",
-			subTitle:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, magni.",
-			bg_img: slide1,
-			coffee_img: coffee_1,
-		},
-		{
-			id: 2,
-			title: "special coffee beans",
-			subTitle:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, magni.",
-			bg_img: slide2,
-			coffee_img: coffee_2,
-		},
-		{
-			id: 3,
-			title: "the home of coffee",
-			subTitle:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, magni.",
-			bg_img: slide3,
-			coffee_img: coffee_3,
-		},
-	];
-
 	const [current, setCurrent] = useState(1);
 	const activeSlide = useRef(null);
 
@@ -56,13 +21,26 @@ function Slider() {
 		}
 	};
 
+	useEffect(() => {
+		const slideInterval = setInterval(() => {
+			nextSlide();
+		}, 5000);
+		return () => clearInterval(slideInterval);
+	});
+
 	return (
 		<header className="header">
 			<div className="slider">
-				{slidesList.map((slide, index) => {
-					const { id, title, subTitle, bg_img, coffee_img } = slide;
+				{slidesList.map((slide) => {
+					const {
+						id,
+						title,
+						subTitle,
+						background_img,
+						coffee_img,
+					} = slide;
 					const background = {
-						background: `url(${bg_img}) no-repeat
+						background: `url(${background_img}) no-repeat
 							center top/cover`,
 					};
 					return (

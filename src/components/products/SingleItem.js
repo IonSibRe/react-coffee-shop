@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ProductsContext } from "../../context/ProductsContext";
 import { CartContext } from "../../context/CartContext";
-import "../../css/products/singleItem.scss";
+import "../../css/singleItem.scss";
 
 function SingleItem() {
 	const { id } = useParams();
@@ -24,7 +24,6 @@ function SingleItem() {
 	}, [price]);
 
 	const updateSingleItem = (type) => {
-		console.log(total);
 		const newPrice = parseFloat(price);
 		if (type === "inc") {
 			let itemTotal = total + newPrice;
@@ -57,53 +56,57 @@ function SingleItem() {
 					<img src={img} alt={title} />
 				</div>
 				<div className="single-item-text-wrap">
-					<h2 className="single-item-heading">{title}</h2>
-					<div className="single-item-rating-wrap">
-						{icons.map((icon) => {
-							const { id, classStyling } = icon;
-							return <i className={classStyling} key={id}></i>;
-						})}
-					</div>
-					<h2 className="single-item-price">${price}</h2>
-					<p className="single-item-desc">{desc}</p>
-					<div className="single-item-add-to-cart-wrap">
-						<div className="single-item-quantity-wrap">
-							<button
-								type="button"
-								className="single-item-quantity-btn"
-								onClick={() => {
-									updateSingleItem("dec");
-								}}
-							>
-								<span> - </span>
-							</button>
-							<h3 className="single-item-quantity-text">
-								{amount}
-							</h3>
-							<button
-								type="button"
-								className="single-item-quantity-btn"
-								onClick={() => updateSingleItem("inc")}
-							>
-								<span>+</span>
-							</button>
+					<div className="single-item-text-inner-wrap">
+						<h2 className="single-item-heading">{title}</h2>
+						<div className="single-item-rating-wrap">
+							{icons.map((icon) => {
+								const { id, classStyling } = icon;
+								return (
+									<i className={classStyling} key={id}></i>
+								);
+							})}
 						</div>
-						<div className="single-item-add-to-cart-inner-wrap">
-							<button
-								className="single-item-add-to-cart-btn"
-								onClick={() =>
-									addToCartSingleItem(
-										id,
-										title,
-										price,
-										img,
-										amount,
-										total.toFixed(2)
-									)
-								}
-							>
-								add to cart
-							</button>
+						<h2 className="single-item-price">${price}</h2>
+						<p className="single-item-desc">{desc}</p>
+						<div className="single-item-add-to-cart-wrap">
+							<div className="single-item-quantity-wrap">
+								<button
+									type="button"
+									className="single-item-quantity-btn"
+									onClick={() => {
+										updateSingleItem("dec");
+									}}
+								>
+									<span> - </span>
+								</button>
+								<h3 className="single-item-quantity-text">
+									{amount}
+								</h3>
+								<button
+									type="button"
+									className="single-item-quantity-btn"
+									onClick={() => updateSingleItem("inc")}
+								>
+									<span>+</span>
+								</button>
+							</div>
+							<div className="single-item-add-to-cart-inner-wrap">
+								<button
+									className="single-item-add-to-cart-btn"
+									onClick={() =>
+										addToCartSingleItem(
+											id,
+											title,
+											price,
+											img,
+											amount,
+											total.toFixed(2)
+										)
+									}
+								>
+									add to cart
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>

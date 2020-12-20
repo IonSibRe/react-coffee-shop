@@ -2,7 +2,7 @@ import React from "react";
 import ProductsHeader from "../components/products/ProductsHeader";
 import ProductsSection from "../components/products/ProductsSection";
 import Footer from "../components/Footer";
-import "../css/products/products.scss";
+import "../css/products.scss";
 
 function Products() {
 	return (

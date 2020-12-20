@@ -1,5 +1,5 @@
 import React from "react";
-import { contact_us_data } from "../../sample_data/contact_us_data";
+import { contact_data } from "../../sample_data/contact_data";
 
 function ContactSection() {
 	return (
@@ -55,7 +55,7 @@ function ContactSection() {
 						</p>
 					</div>
 					<div className="locations-info-container">
-						{contact_us_data.map((item) => {
+						{contact_data.map((item) => {
 							const {
 								id,
 								type,
@@ -69,12 +69,9 @@ function ContactSection() {
 								second_email,
 							} = item;
 							return (
-								<>
+								<div key={id}>
 									{type === "address" && (
-										<div
-											className="locations-info-item"
-											key={id}
-										>
+										<div className="locations-info-item">
 											<div className="locations-icon-wrap">
 												<i className="fas fa-map-marker-alt locations-icon"></i>
 											</div>
@@ -96,10 +93,7 @@ function ContactSection() {
 									)}
 
 									{type === "phone" && (
-										<div
-											className="locations-info-item"
-											key={id}
-										>
+										<div className="locations-info-item">
 											<div className="locations-icon-wrap">
 												<i className="fas fa-phone-alt locations-icon"></i>
 											</div>
@@ -118,10 +112,7 @@ function ContactSection() {
 									)}
 
 									{type === "email" && (
-										<div
-											className="locations-info-item"
-											key={id}
-										>
+										<div className="locations-info-item">
 											<div className="locations-icon-wrap">
 												<i className="far fa-envelope locations-icon"></i>
 											</div>
@@ -138,7 +129,7 @@ function ContactSection() {
 											</div>
 										</div>
 									)}
-								</>
+								</div>
 							);
 						})}
 					</div>

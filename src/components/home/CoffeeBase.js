@@ -1,34 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-	coffee_build_img_1,
-	coffee_build_img_2,
-	coffee_build_img_3,
-} from "../../sample_data/home_images";
-
-const items = [
-	{
-		id: 1,
-		title: "beautiful place",
-		desc:
-			"Alienum phaedrum to rquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix atle.",
-		img: coffee_build_img_1,
-	},
-	{
-		id: 2,
-		title: "feel the coffee",
-		desc:
-			"Alienum phaedrum to rquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix atle.",
-		img: coffee_build_img_2,
-	},
-	{
-		id: 3,
-		title: "full taste",
-		desc:
-			"Alienum phaedrum to rquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an pericula euripidis, hinc partem ei est. Eos ei nisl graecis, vix aperiri consequat an. Eius lorem tincidunt vix atle.",
-		img: coffee_build_img_3,
-	},
-];
+import { coffeeBuildItems } from "../../sample_data/home_data";
 
 function CoffeeBase() {
 	return (
@@ -42,7 +14,7 @@ function CoffeeBase() {
 					<div className="coffee_build_text_underline"></div>
 				</div>
 				<div className="coffee_build_grid_container">
-					{items.map((item) => {
+					{coffeeBuildItems.map((item) => {
 						const { id, title, desc, img } = item;
 						return (
 							<div className="coffee_build_grid_item" key={id}>

@@ -1,22 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-	carousel_img_1,
-	carousel_img_2,
-	carousel_img_3,
-} from "../../sample_data/home_images";
-
-const data_images = [
-	{ id: 1, img: carousel_img_1 },
-	{ id: 2, img: carousel_img_2 },
-	{ id: 3, img: carousel_img_3 },
-];
+import { carouselItems } from "../../sample_data/home_data";
 
 function Carousel() {
 	const [current, setCurrent] = useState(1);
 
 	const nextSlide = () => {
-		if (current <= data_images.length - 1) {
+		if (current <= carouselItems.length - 1) {
 			setCurrent(current + 1);
 		} else {
 			setCurrent(1);
@@ -50,7 +40,7 @@ function Carousel() {
 					</div>
 				</div>
 				<div className="carousel-slider">
-					{data_images.map((item) => {
+					{carouselItems.map((item) => {
 						const { id, img } = item;
 						const background = {
 							background: `url(${img}) no-repeat center center/cover`,

@@ -1,4 +1,4 @@
-export const contact_us_data = [
+export const contact_data = [
 	{
 		id: 1,
 		type: "address",

@@ -7,7 +7,7 @@ function AboutHeader() {
 	};
 	return (
 		<header className="component-header" style={background}>
-			<h1 className="component-heading">About Me</h1>
+			<h1 className="component-heading">about me</h1>
 		</header>
 	);
 }

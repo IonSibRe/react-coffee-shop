@@ -1,21 +1,23 @@
 import React, { useState } from "react";
-import items from "../../sample_data/home_menu_data";
+import { v4 as uuidv4 } from "uuid";
+import { menuProducts } from "../../sample_data/home_data";
 import menu_background from "../../assets/home-imgs/menu_background.jpg";
 
-const categories = ["all", ...new Set(items.map((item) => item.category))];
-
-const randomID = () => {
-	return Math.ceil(Math.random() * 1000000);
-};
+const categories = [
+	"all",
+	...new Set(menuProducts.map((item) => item.category)),
+];
 
 function HomeMenu() {
-	const [menuItems, setMenuItems] = useState(items);
+	const [menuItems, setMenuItems] = useState(menuProducts);
 
 	const displayItems = (category) => {
 		if (category === "all") {
-			setMenuItems(items);
+			setMenuItems(menuProducts);
 		} else {
-			const newItems = items.filter((item) => item.category === category);
+			const newItems = menuProducts.filter(
+				(item) => item.category === category
+			);
 			setMenuItems(newItems);
 		}
 	};
@@ -37,7 +39,7 @@ function HomeMenu() {
 						return (
 							<button
 								type="button"
-								key={randomID()}
+								key={uuidv4()}
 								className="menu-btn"
 								onClick={() => displayItems(btn)}
 							>

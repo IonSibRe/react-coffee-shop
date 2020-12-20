@@ -7,7 +7,7 @@ function ProductsHeader() {
 	};
 	return (
 		<header className="component-header" style={background}>
-			<h1 className="component-heading">Products</h1>
+			<h1 className="component-heading">products</h1>
 		</header>
 	);
 }
