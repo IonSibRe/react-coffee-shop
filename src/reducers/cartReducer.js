@@ -76,7 +76,7 @@ function reducer(state, action) {
 			total = parseFloat(total.toFixed(2));
 			return { ...state, total, amount };
 
-		case "ADD_TO_CART_SINGLE_ITEM":
+		case "ADD_SINGLE_ITEM_TO_CART":
 			return {
 				...state,
 				cart: [...state.cart, action.payload],

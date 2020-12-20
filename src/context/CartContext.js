@@ -31,7 +31,7 @@ const CartProvider = ({ children }) => {
 
 	const addToCartSingleItem = (id, title, price, img, amount, total) => {
 		const cartItem = { id, title, price, img, amount, total };
-		dispatch({ type: "ADD_TO_CART_SINGLE_ITEM", payload: cartItem });
+		dispatch({ type: "ADD_SINGLE_ITEM_TO_CART", payload: cartItem });
 	};
 
 	useEffect(() => {

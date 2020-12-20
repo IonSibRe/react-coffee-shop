@@ -27,16 +27,16 @@ function SingleItem() {
 		console.log(total);
 		const newPrice = parseFloat(price);
 		if (type === "inc") {
-			const itemTotal = total + newPrice;
+			let itemTotal = total + newPrice;
 			setAmount(amount + 1);
 			setTotal(itemTotal);
 		} else {
 			if (amount > 1) {
-				const itemTotal = total - newPrice;
+				let itemTotal = total - newPrice;
 				setAmount(amount - 1);
 				setTotal(itemTotal);
 			} else {
-				const itemTotal = newPrice;
+				let itemTotal = newPrice;
 				setAmount(1);
 				setTotal(itemTotal);
 			}
@@ -98,7 +98,7 @@ function SingleItem() {
 										price,
 										img,
 										amount,
-										total
+										total.toFixed(2)
 									)
 								}
 							>
