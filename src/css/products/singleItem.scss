@@ -1,0 +1,77 @@
+@import "../global//config";
+
+.single-item-section {
+	@include flex-center;
+	height: 100vh;
+}
+
+.single-item-inner-container {
+	width: $default-width;
+	margin: 0 auto;
+	display: flex;
+
+	.single-item-img-wrap {
+		flex: 1;
+		margin-right: 2rem;
+	}
+
+	.single-item-text-wrap {
+		flex: 1;
+		margin-left: 2rem;
+
+		> * {
+			margin-bottom: 1.25rem;
+		}
+
+		.single-item-heading {
+			font-size: $h2-size;
+			text-transform: uppercase;
+			color: $text-color-inverse;
+		}
+
+		.single-item-rating-wrap {
+			color: $text-primary-color;
+		}
+
+		.single-item-price {
+			font-size: $h2-size + 0.5rem;
+			color: $text-primary-color;
+		}
+
+		.single-item-desc {
+			margin-bottom: 2rem;
+			font-size: $paragraph-size;
+			line-height: 1.5;
+			color: $text-color-inverse;
+		}
+
+		.single-item-add-to-cart-wrap {
+			display: flex;
+			align-items: center;
+		}
+
+		.single-item-quantity-wrap {
+			@include flex-center;
+			margin-right: 4rem;
+		}
+
+		.single-item-quantity-btn {
+			@include btn-default;
+			font-size: 4rem;
+		}
+
+		.single-item-quantity-text {
+			margin: 0 2rem;
+		}
+
+		.single-item-add-to-cart-btn {
+			@include btn-default;
+			padding: 1rem 3rem;
+			font-size: $default-link-size;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: $text-color;
+			background-color: $text-primary-color;
+		}
+	}
+}

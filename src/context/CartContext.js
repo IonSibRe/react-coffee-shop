@@ -4,7 +4,6 @@ import reducer from "../reducers/cartReducer";
 const CartContext = React.createContext();
 
 const initialState = {
-	loading: false,
 	cart: [],
 	total: 0,
 	amount: 0,
@@ -30,13 +29,25 @@ const CartProvider = ({ children }) => {
 		dispatch({ type: "ADD_TO_CART", payload: cartItem });
 	};
 
+	const addToCartSingleItem = (id, title, price, img, amount, total) => {
+		const cartItem = { id, title, price, img, amount, total };
+		dispatch({ type: "ADD_TO_CART_SINGLE_ITEM", payload: cartItem });
+	};
+
 	useEffect(() => {
 		dispatch({ type: "GET_TOTALS" });
 	}, [state.cart]);
 
 	return (
 		<CartContext.Provider
-			value={{ ...state, addToCart, clearCart, removeItem, toggleAmount }}
+			value={{
+				...state,
+				addToCart,
+				clearCart,
+				removeItem,
+				toggleAmount,
+				addToCartSingleItem,
+			}}
 		>
 			{children}
 		</CartContext.Provider>

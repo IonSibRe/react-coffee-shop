@@ -11,8 +11,9 @@ export const products_data = [
 		title: "paper pouch",
 		rating: "4",
 		price: "46.99",
+		desc:
+			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis assumenda, ut eaque autem alias obcaecati sint repudiandae soluta tempore maxime? Aliquam necessitatibus quaerat aliquid nemo? Ipsa quae voluptas error doloribus.",
 		img: product_img_1,
-		amount: "1",
 		category: "bag",
 	},
 	{
@@ -20,8 +21,9 @@ export const products_data = [
 		title: "paper bag",
 		rating: "5",
 		price: "79.99",
+		desc:
+			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis assumenda, ut eaque autem alias obcaecati sint repudiandae soluta tempore maxime? Aliquam necessitatibus quaerat aliquid nemo? Ipsa quae voluptas error doloribus.",
 		img: product_img_2,
-		amount: "1",
 		category: "bag",
 	},
 	{
@@ -29,8 +31,9 @@ export const products_data = [
 		title: "plastic pouch",
 		rating: "5",
 		price: "27.99",
+		desc:
+			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis assumenda, ut eaque autem alias obcaecati sint repudiandae soluta tempore maxime? Aliquam necessitatibus quaerat aliquid nemo? Ipsa quae voluptas error doloribus.",
 		img: product_img_3,
-		amount: "1",
 		category: "bag",
 	},
 	{
@@ -38,8 +41,9 @@ export const products_data = [
 		title: "coffee pot",
 		rating: "4",
 		price: "71.99",
+		desc:
+			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis assumenda, ut eaque autem alias obcaecati sint repudiandae soluta tempore maxime? Aliquam necessitatibus quaerat aliquid nemo? Ipsa quae voluptas error doloribus.",
 		img: product_img_4,
-		amount: "1",
 		category: "pot",
 	},
 	{
@@ -47,8 +51,9 @@ export const products_data = [
 		title: "tea pot",
 		rating: "5",
 		price: "54.99",
+		desc:
+			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis assumenda, ut eaque autem alias obcaecati sint repudiandae soluta tempore maxime? Aliquam necessitatibus quaerat aliquid nemo? Ipsa quae voluptas error doloribus.",
 		img: product_img_5,
-		amount: "1",
 		category: "pot",
 	},
 	{
@@ -56,8 +61,9 @@ export const products_data = [
 		title: "paper cup",
 		rating: "4",
 		price: "31.99",
+		desc:
+			"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis assumenda, ut eaque autem alias obcaecati sint repudiandae soluta tempore maxime? Aliquam necessitatibus quaerat aliquid nemo? Ipsa quae voluptas error doloribus.",
 		img: product_img_6,
-		amount: "1",
 		category: "cup",
 	},
 ];

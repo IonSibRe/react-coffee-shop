@@ -76,6 +76,14 @@ function reducer(state, action) {
 			total = parseFloat(total.toFixed(2));
 			return { ...state, total, amount };
 
+		case "ADD_TO_CART_SINGLE_ITEM":
+			return {
+				...state,
+				cart: [...state.cart, action.payload],
+				amount: action.payload.amount,
+				total: action.payload.total,
+			};
+
 		default:
 			throw new Error("no method matched the dispatch");
 	}

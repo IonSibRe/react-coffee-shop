@@ -32,7 +32,10 @@ function ProductsContainer() {
 					return (
 						<div className="products-item" key={id}>
 							<div className="products-img-wrap">
-								<Link to="#" className="products-img-link-wrap">
+								<Link
+									to={`/products/${id}`}
+									className="products-img-link-wrap"
+								>
 									<img
 										src={img}
 										alt={title}
